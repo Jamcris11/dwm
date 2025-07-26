@@ -16,11 +16,14 @@
 
 
 ## Requirements:
-- ns & ns-dmenu
+- ns 
     - tabler
+- ns-dmenu
+- dwm-status
 - pywal-wallpaper
     - pywal16
     - sxiv
     - *(optional)*
     - pywal-discord
     - pywalfox
+- update-xresources
