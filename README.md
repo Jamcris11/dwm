@@ -8,6 +8,7 @@
 ## Patches applied:
 | Name | What does it do? |
 |------|------------------|
+| actualfullscreen | Provides fullscreen capability (good for gaming) |
 | colorbar | Provides greater control of all the colors of the bar |
 | focusmonmouse | Moves the cursor to the selected monitor |
 | fullgaps | Add gaps to windows with the ability to increase/decrease size on the fly |
