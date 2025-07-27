@@ -12,6 +12,7 @@
 | colorbar | Provides greater control of all the colors of the bar |
 | focusmonmouse | Moves the cursor to the selected monitor |
 | fullgaps | Add gaps to windows with the ability to increase/decrease size on the fly |
+| preserveonrestart | When reloading dwm windows are preserves on their assigned tags |
 | setstatus | Can set the bar status with dwm -s |
 | xresources | Allows loading of values from your .xresources file |
 
