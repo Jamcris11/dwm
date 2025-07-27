@@ -16,6 +16,8 @@ static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
 static char urgbordercolor[]        = "#ff0000";
+static const unsigned int baralpha  = OPAQUE;
+static const unsigned int borderalpha = OPAQUE;
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -26,6 +28,11 @@ static char *colors[][3] = {
        [SchemeTagsNorm]  = { normfgcolor, normbgcolor,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
        [SchemeInfoSel]  = { normfgcolor, normbgcolor,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty} 
 	   [SchemeInfoNorm]  = { selfgcolor, normbgcolor,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
+};
+
+static const unsigned int alphas[][3]	= {
+	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel] = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */
