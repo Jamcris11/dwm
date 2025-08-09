@@ -855,7 +855,7 @@ focusmon(const Arg *arg)
 	if ((m = dirtomon(arg->i)) == selmon)
 		return;
 	unfocus(selmon->sel, 0);
-	XWarpPointer(dpy, None, m->barwin, 0, 0, 0, 0, m->mw / 2, m->mh / 2);
+	XWarpPointer(dpy, None, m->barwin, 0, 0, 0, 0, m->mw-1, m->mh-1);
 	selmon = m;
 	focus(NULL);
 }
