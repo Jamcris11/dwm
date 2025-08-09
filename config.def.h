@@ -2,7 +2,7 @@
 
 /* appearance */
 static unsigned int borderpx  = 1;        /* border pixel of windows */
-static unsigned int gappx     = 5;        /* gaps between windows */
+static unsigned int gappx     = 50;        /* gaps between windows */
 static unsigned int snap      = 32;       /* snap pixel */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
@@ -49,7 +49,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
@@ -129,8 +129,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
-	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+	{ MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
+	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
