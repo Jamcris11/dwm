@@ -50,21 +50,29 @@ static const unsigned int alphas[][3]	= {
 };
 
 /* tagging */
-static const char *tags[] = { "\ue658", "󰎩", "󰎬", "󰎮", "󰎰", "󰎵", "󰎸", "󰎻", "󰎾" };
+static const char *tags[] = { "󰎤", "󰎧", "󰎪", "󰎭", "󰎱", "󰎳", "󰎶", "󰎹", "󰎼" };
 static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const int momentaryalttags = 0; /* 1 means alttags will show only when key is held down*/
+
+/* appicons */
+/* NOTE: set to 0 to set to default (whitespace) */
+static char outer_separator_beg      = '<';
+static char outer_separator_end      = '>';
+static char inner_separator          = '-';
+static unsigned truncate_icons_after = 2; /* will default to 1, that is the min */
+static char truncate_symbol[]        = "*";
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,		 "spterm", NULL,		   SPTAG(0),  1,		  1,		   1,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor  appicon*/
+	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1,	NULL },
+	{ "firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1, 	"󰈹" },
+	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1, 	"󰆍" },
+	{ NULL,		 "spterm", NULL,		   SPTAG(0),  1,		  1,		   1,        -1,	NULL },
+	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1,	NULL }, /* xev */
 };
 
 /* layout(s) */
