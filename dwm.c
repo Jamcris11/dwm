@@ -1326,6 +1326,7 @@ manage(Window w, XWindowAttributes *wa)
 		c->y = c->mon->wy + c->mon->wh - HEIGHT(c);
 	c->x = MAX(c->x, c->mon->wx);
 	c->y = MAX(c->y, c->mon->wy);
+	
 	c->bw = borderpx;
 
 	wc.border_width = c->bw;
@@ -1800,10 +1801,18 @@ setfullscreen(Client *c, int fullscreen)
 void
 setgaps(const Arg *arg)
 {
+	if (selmon->gappx + arg->i <= 0 || arg->i == 0)
+		for (Client* c = selmon->clients; c; c = c->next)
+			c->bw = 0;
+	else if (selmon->gappx == 0 && selmon->gappx + arg->i > 0)
+		for (Client* c = selmon->clients; c; c = c->next)
+			c->bw = borderpx;
+
 	if ((arg->i == 0) || (selmon->gappx + arg->i < 0))
 		selmon->gappx = 0;
 	else
 		selmon->gappx += arg->i;
+
 	arrange(selmon);
 }
 
