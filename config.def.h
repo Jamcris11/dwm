@@ -7,7 +7,8 @@ static unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating = 0;	  /* means swallow floating windows by default */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char font[]            = "CommitMonoNerdFontMono-Regular:size=14";
+static const int user_bh      = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+static char font[]            = "CommitMonoNerdFontMono-Regular:size=24";
 static char dmenufont[]       = "monospace:size=12";
 static const char *fonts[]          = { font };
 static char normbgcolor[]           = "#222222";
@@ -49,8 +50,8 @@ static const unsigned int alphas[][3]	= {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tagsalt[] = { "", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "\ue658", "󰎩", "󰎬", "󰎮", "󰎰", "󰎵", "󰎸", "󰎻", "󰎾" };
+static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const int momentaryalttags = 0; /* 1 means alttags will show only when key is held down*/
 
 static const Rule rules[] = {
