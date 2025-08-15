@@ -90,8 +90,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-bw", "1", NULL };
-static const char *nscmd[] = { "ns-dmenu", "-fn", dmenufont, "-bw", "1", "-g", "3", "-l", "5", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-tm", "-fn", dmenufont, "-bw", "1", NULL };
+static const char *nscmd[] = { "ns-dmenu", "-c", "-p", "netsearch", "-fn", dmenufont, "-bw", "1", "-g", "3", "-l", "5", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *pywalcmd[] = { "pywal-wallpaper", NULL };
 
