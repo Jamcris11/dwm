@@ -68,11 +68,12 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor  appicon*/
-	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1,	NULL },
+	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1,	"" },
 	{ "firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1, 	"󰈹" },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1, 	"󰆍" },
 	{ NULL,		 "spterm", NULL,		   SPTAG(0),  1,		  1,		   1,        -1,	NULL },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1,	NULL }, /* xev */
+	{ "steam",   NULL,     NULL,		   0,         0,          0,           1,        -1,	"󰓓" }, 
 };
 
 /* layout(s) */
