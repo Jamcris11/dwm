@@ -8,7 +8,7 @@ static const int swallowfloating = 0;	  /* means swallow floating windows by def
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh      = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static char font[]            = "CommitMonoNerdFontMono-Regular:size=24";
+static char font[]            = "CommitMonoNerdFontPropo-Regular:size=16";
 static char dmenufont[]       = "monospace:size=12";
 static const char *fonts[]          = { font };
 static char normbgcolor[]           = "#222222";

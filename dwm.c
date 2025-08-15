@@ -948,7 +948,7 @@ drawbar(Monitor *m)
 
     for (int i = 0; i < LENGTH(tags); i++) {
         /* set each tag to default value */
-        m->tag_icons[i] = strndup(tags[i], strlen(tags[i]));
+		m->tag_icons[i] = strndup(tags[i], strlen(tags[i]));
     }
 
 
@@ -966,7 +966,12 @@ drawbar(Monitor *m)
 		w = TEXTW(m->tag_icons[i]);
 		wdelta = selmon->alttag ? abs(TEXTW(tags[i]) - TEXTW(tagsalt[i])) / 2 : 0;
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeTagsSel : SchemeTagsNorm]);
-		drw_text(drw, x, 0, w, bh, lrpad / 2, m->tag_icons[i], urg & 1 << i);
+		if (m->alttag)
+			drw_text(drw, x, 0, w, bh, lrpad / 2, tagsalt[i], urg & 1 << i);
+		else 
+			drw_text(drw, x, 0, w, bh, lrpad / 2, m->tag_icons[i], urg & 1 << i);
+
+
 		if (occ & 1 << i && icons_per_tag[i] == 0)
 			drw_rect(drw, x + boxs, boxs, boxw, boxw,
 				m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
