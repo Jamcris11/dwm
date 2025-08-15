@@ -9,7 +9,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh      = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static char font[]            = "CommitMonoNerdFontPropo-Regular:size=16";
-static char dmenufont[]       = "monospace:size=12";
+static char dmenufont[]       = "CommitMonoNerdFontPropo-Regular:size=16";
 static const char *fonts[]          = { font };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
