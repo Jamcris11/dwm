@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include <X11/XF86keysym.h>
+
 /* appearance */
 static unsigned int borderpx  = 1;        /* border pixel of windows */
 static unsigned int gappx     = 50;        /* gaps between windows */
@@ -58,7 +60,7 @@ static const int momentaryalttags = 1; /* 1 means alttags will show only when ke
 /* NOTE: set to 0 to set to default (whitespace) */
 static char outer_separator_beg      = '<';
 static char outer_separator_end      = '>';
-static char inner_separator          = '-';
+static char inner_separator          = ',';
 static unsigned truncate_icons_after = 2; /* will default to 1, that is the min */
 static char truncate_symbol[]        = "*";
 
@@ -75,7 +77,9 @@ static const Rule rules[] = {
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1,	NULL }, /* xev */
 	{ "steam",   NULL,     NULL,		   0,         0,          0,           1,        -1,	"󰓓" }, 
 	{ "Chromium",  NULL,     NULL,		   1 << 7,    0,          0,           1,        -1,	"" }, 
-	{ "Tor Browser",  NULL,     NULL,	   0,    0,          0,           1,        -1,	"" }, 
+	{ "Tor Browser",  NULL,     NULL,	   0,    	  0,          0,           1,        -1,	"" }, 
+	{ "vesktop",  NULL,     	NULL,	   0,    	  0,          0,           1,        -1,	"" }, 
+	{ "Spotify",  NULL,     	NULL,	   0,    	  0,          0,           1,        -1,	"" }, 
 };
 
 /* layout(s) */
@@ -108,6 +112,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-tm", "-fn", dmenufont, "-bw", "
 static const char *nscmd[] = { "ns-dmenu", "-c", "-p", "netsearch", "-fn", dmenufont, "-bw", "1", "-g", "3", "-l", "5", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *pywalcmd[] = { "pywal-wallpaper", NULL };
+static const char *volincr[] = { "volincr5per",  NULL };
+static const char *voldecr[] = { "voldecr5per", NULL };
+static const char *volmute[] = { "volmutetogg", NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -174,6 +181,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY,            			XK_a,  	   togglescratch,  {.ui = 0 } },
 	{ MODKEY,                       XK_n,      togglealttag,   {0} },
+	{ 0,		 XF86XK_AudioRaiseVolume,	   spawn,		   {.v = volincr } },
+	{ 0,		 XF86XK_AudioLowerVolume,	   spawn,		   {.v = voldecr } },
+	{ 0,		 		XF86XK_AudioMute,	   spawn,		   {.v = volmute } },
 };
 
 /* button definitions */
