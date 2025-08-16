@@ -2411,6 +2411,13 @@ updatetitle(Client *c)
 		gettextprop(c->win, XA_WM_NAME, c->name, sizeof c->name);
 	if (c->name[0] == '\0') /* hack to mark broken clients */
 		strcpy(c->name, broken);
+
+	int icons_per_tag[LENGTH(tags)];
+    memset(icons_per_tag, 0, LENGTH(tags) * sizeof(int));
+
+	if ( c != NULL && c->mon != NULL ) {
+		applyrules(c);
+	}
 }
 
 void

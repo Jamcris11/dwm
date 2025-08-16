@@ -80,6 +80,7 @@ static const Rule rules[] = {
 	{ "Tor Browser",  NULL,     NULL,	   0,    	  0,          0,           1,        -1,	"" }, 
 	{ "vesktop",  NULL,     	NULL,	   0,    	  0,          0,           1,        -1,	"" }, 
 	{ "Spotify",  NULL,     	NULL,	   0,    	  0,          0,           1,        -1,	"" }, 
+	{ NULL,  	  NULL,     	"nvim",	   0,    	  0,          0,           1,        -1,	"" }, 
 };
 
 /* layout(s) */
