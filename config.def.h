@@ -81,6 +81,7 @@ static const Rule rules[] = {
 	{ "vesktop",  NULL,     	NULL,	   0,    	  0,          0,           1,        -1,	"" }, 
 	{ "Spotify",  NULL,     	NULL,	   0,    	  0,          0,           1,        -1,	"" }, 
 	{ NULL,  	  NULL,     	"nvim",	   0,    	  0,          0,           1,        -1,	"" }, 
+	{ "heroic",   NULL,     	NULL,	   0,    	  0,          0,           1,        -1,	"󱢾" }, 
 };
 
 /* layout(s) */
@@ -116,6 +117,9 @@ static const char *pywalcmd[] = { "pywal-wallpaper", NULL };
 static const char *volincr[] = { "volincr5per",  NULL };
 static const char *voldecr[] = { "voldecr5per", NULL };
 static const char *volmute[] = { "volmutetogg", NULL };
+static const char *scrshot_selmon[] = { "flameshot", "screen", NULL };
+static const char *scrshot_full[] = { "flameshot", "full", NULL };
+static const char *scrshot_gui[] = { "flameshot", "gui", NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -185,6 +189,9 @@ static const Key keys[] = {
 	{ 0,		 XF86XK_AudioRaiseVolume,	   spawn,		   {.v = volincr } },
 	{ 0,		 XF86XK_AudioLowerVolume,	   spawn,		   {.v = voldecr } },
 	{ 0,		 		XF86XK_AudioMute,	   spawn,		   {.v = volmute } },
+	{ 0,                        XK_Print,      spawn,          {.v = scrshot_selmon } },
+	{ MODKEY,                   XK_Print,      spawn,          {.v = scrshot_full } },
+	{ MODKEY|ShiftMask,         XK_Print,      spawn,          {.v = scrshot_gui } },
 };
 
 /* button definitions */
