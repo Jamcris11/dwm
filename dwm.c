@@ -367,10 +367,13 @@ applyrules(Client *c, int preservetag)
 			c->isterminal = r->isterminal;
 			c->noswallow  = r->noswallow;
 			c->isfloating = r->isfloating;
-			c->tags |= r->tags;
-			if ((r->tags & SPTAGMASK) && r->isfloating) {
-				c->x = c->mon->wx + (c->mon->ww / 2 - WIDTH(c) / 2);
-				c->y = c->mon->wy + (c->mon->wh / 2 - HEIGHT(c) / 2);
+			if (!preservetag) {
+				c->tags |= r->tags;
+				
+				if ((r->tags & SPTAGMASK) && r->isfloating) {
+					c->x = c->mon->wx + (c->mon->ww / 2 - WIDTH(c) / 2);
+					c->y = c->mon->wy + (c->mon->wh / 2 - HEIGHT(c) / 2);
+				}
 			}
 
 			for (m = mons; m && m->num != r->monitor; m = m->next);
