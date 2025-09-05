@@ -72,6 +72,7 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor  appicon*/
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1,	"" },
 	{ "firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1, 	"󰈹" },
+	{ "thunderbird", NULL,     NULL,       0,    	  0,          0,          -1,        -1, 	"" },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1, 	"󰆍" },
 	{ NULL,		 "spterm", NULL,		   SPTAG(0),  1,		  1,		   1,        -1,	NULL },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1,	NULL }, /* xev */
@@ -199,8 +200,6 @@ static const Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
-	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
-	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
